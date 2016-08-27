@@ -9,14 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
-    }
-    return Hero;
-}());
-exports.Hero = Hero;
 var HEROES = [
-    { id: 2, name: 'Mr. Nice' },
     { id: 3, name: 'Narco' },
     { id: 4, name: 'Bombasto' },
     { id: 5, name: 'Celeritas' },
@@ -34,9 +27,9 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>{{title}}</h1>\n\t\t<h2>My Heroes</h2>\n\t\t<ul class=\"heroes\" >\n\t\t\t<li *ngFor=\"let hero of heroes\" (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectHero\">\n\t\t\t\t<span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n\t\t\t</li>\n\t\t</ul>\n\t\t<div *ngIf=\"selectHero\">\n\t\t\t<h2>{{selectHero.name}} details!</h2>\n\t\t\t<div><label>id: </label>{{selectHero.id}}</div>\n\t\t\t<div>\n\t\t\t\t<label>name: </label>\n\t\t\t\t<input [(ngModel)]=\"selectHero.name\" placeholder=\"name\" />\n\t\t\t</div>\n\t\t</div>",
+            template: "<h1>{{title}}</h1>\n\t\t<h2>My Heroes</h2>\n\t\t<ul class=\"heroes\" >\n\t\t\t<li *ngFor=\"let hero of heroes\" (click)=\"onSelect(hero)\" [class.selected]=\"hero === selectHero\">\n\t\t\t\t<span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n\t\t\t</li>\n\t\t</ul>\n\t\t<my-hero-detail [hero]=\"selectHero\"></my-hero-detail>",
             styles: [
-                "\n\t\t.selected {\n\t\t\tbackground-color: #CFD8DC !important;\n\t\t\tcolor: white;\n\t\t}\n\t\t.heroes {\n\t\t\tmargin: 0 0 2em 0;\n\t\t\tlist-style-type: none;\n\t\t\tpadding: 0;\n\t\t\twidth: 15em;\n\t\t}\n\t\t.heroes li {\n\t\t\tcursor: pointer;\n\t\t\tposition: relative;\n\t\t\tleft: 0;\n\t\t\tbackground-color: #EEE;\n\t\t\tmargin: .5em;\n\t\t\tpadding: .3em 0;\n\t\t\theight: 1.6em;\n\t\t\tborder-radius: 4px;\n\t\t}\n\t\t.heroes li.selected:hover {\n\t\t\tbackground-color: #BBD8DC !important;\n\t\t\tcolor: white;\n\t\t}\n\t\t.heroes li:hover {\n\t\t\tcolor: #607D8B;\n\t\t\tbackground-color: #DDD;\n\t\t\tleft: .1em;\n\t\t}\n\t\t.heroes .text {\n\t\t\tposition: relative;\n\t\t\ttop: -3px;\n\t\t}\n\t\t.heroes .badge {\n\t\t\tdisplay: inline-block;\n\t\t\tfont-size: small;\n\t\t\tcolor: white;\n\t\t\tpadding: 0.8em 0.7em 0 0.7em;\n\t\t\tbackground-color: #607D8B;\n\t\t\tline-height: 1em;\n\t\t\tposition: relative;\n\t\t\tleft: -1px;\n\t\t\ttop: -4px;\n\t\t\theight: 1.8em;\n\t\t\tmargin-right: .8em;\n\t\t\tborder-radius: 4px 0 0 4px;\n\t\t}\n\t\t"
+                "\n.selected {\nbackground-color: #CFD8DC !important;\ncolor: white;\n}\n.heroes {\nmargin: 0 0 2em 0;\nlist-style-type: none;\npadding: 0;\nwidth: 15em;\n}\n.heroes li {\ncursor: pointer;\nposition: relative;\nleft: 0;\nbackground-color: #EEE;\nmargin: .5em;\npadding: .3em 0;\nheight: 1.6em;\nborder-radius: 4px;\n}\n.heroes li.selected:hover {\nbackground-color: #BBD8DC !important;\ncolor: white;\n}\n.heroes li:hover {\ncolor: #607D8B;\nbackground-color: #DDD;\nleft: .1em;\n}\n.heroes .text {\nposition: relative;\ntop: -3px;\n}\n.heroes .badge {\ndisplay: inline-block;\nfont-size: small;\ncolor: white;\npadding: 0.8em 0.7em 0 0.7em;\nbackground-color: #607D8B;\nline-height: 1em;\nposition: relative;\nleft: -1px;\ntop: -4px;\nheight: 1.8em;\nmargin-right: .8em;\nborder-radius: 4px 0 0 4px;\n}\n"
             ]
         }), 
         __metadata('design:paramtypes', [])
